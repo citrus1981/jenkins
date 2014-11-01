@@ -1,0 +1,8 @@
+jenkins:
+  image: citrus1981/jenkins
+  ports:
+   - "8080:8080"
+  volumes:
+   - /opt/docker_data/jenkins:/jenkins
+  links:
+   - redis
