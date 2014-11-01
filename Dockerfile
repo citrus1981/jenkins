@@ -7,12 +7,12 @@ rm *.rpm
 EXPOSE 8080
 EXPOSE 8009
 
-RUN useradd -d /home/jenkins -m -s /bin/bash jenkins
+#RUN useradd -d /home/jenkins -m -s /bin/bash jenkins
 ENV JENKINS_HOME /jenkins
-RUN usermod -m -d "$JENKINS_HOME" jenkins && chown -R jenkins "$JENKINS_HOME"
+#RUN usermod -m -d "$JENKINS_HOME" jenkins && chown -R jenkins "$JENKINS_HOME"
 VOLUME /jenkins
 
 RUN curl -L -O http://mirrors.jenkins-ci.org/war/latest/jenkins.war
-USER jenkins
+#USER jenkins
 
 CMD ["java", "-jar", "/jenkins.war", "--httpPort=8080", "--ajp13Port=8009"]
